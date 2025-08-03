@@ -9,8 +9,15 @@ int leaveOrTryAgain();
 int main()
 {
     // random number to guess
-    int min = 1;
-    int max = 20;
+    int min = 0;
+    int max = 100;
+
+    // let the set the range
+    printf("Enter the minimum number: ");
+    scanf("%d", &min);
+    printf("Enter the maximum number: ");
+    scanf("%d", &max);
+
     int correctGuess = getRandomNumber(max, min);
 
     // user input: the guess
@@ -21,7 +28,7 @@ int main()
     {
 
         // read user input
-        printf("Enter Your Guess: ");
+        printf("Enter Your Guess between %d and %d: ", min, max);
         scanf("%d", &guess);
 
         if (correctGuess == guess)
