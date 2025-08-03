@@ -8,6 +8,8 @@ int leaveOrTryAgain();
 
 int main()
 {
+    printf("*** Welcome to Number Guessing Game V.1.1 ***\n");
+
     // random number to guess
     int min = 0;
     int max = 100;
@@ -24,9 +26,8 @@ int main()
     int guess = 0;
 
     // process the guess
-    while (correctGuess != guess)
+    do
     {
-
         // read user input
         printf("Enter Your Guess between %d and %d: ", min, max);
         scanf("%d", &guess);
@@ -47,7 +48,7 @@ int main()
         {
             printf("Too LOW!\n\n");
         }
-    }
+    } while (correctGuess != guess);
 
     // user decision to leave the game or play again
     int userLeaveOrPlay = leaveOrTryAgain();
